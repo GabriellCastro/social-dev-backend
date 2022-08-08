@@ -1,6 +1,7 @@
 import { User } from "@prisma/client";
 import bcrypt from "bcryptjs";
 import { sign } from "jsonwebtoken";
+import * as Yup from "yup";
 import { AppError } from "../../../errors/AppError";
 import { IUsersRepository } from "../../../respositories/types/IUsersRepository";
 
@@ -14,9 +15,18 @@ type Response = {
   token: string;
 };
 
+const schema = Yup.object({
+  email: Yup.string().required("O email é obrigatório").email(),
+  password: Yup.string()
+    .required("A senha é obrigatória")
+    .min(6, "A senha deve ter pelo menos 6 caracteres"),
+});
+
 export class LoginUserService {
   constructor(private usersRepository: IUsersRepository) {}
   async execute({ email, password }: Request): Promise<Response> {
+    await schema.validate({ email, password });
+
     const userLocated = await this.usersRepository.find(email);
 
     if (!userLocated) {

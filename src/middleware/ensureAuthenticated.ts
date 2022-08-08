@@ -11,7 +11,7 @@ interface TokenPayload {
 export default function ensureAuthenticated(
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ): void {
   const authHeader = req.headers.authorization;
   if (!authHeader) {
@@ -25,9 +25,7 @@ export default function ensureAuthenticated(
 
     const { id: userId } = decoded as TokenPayload;
 
-    req.user = {
-      id: userId,
-    };
+    res.locals.userId = userId;
 
     return next();
   } catch {
