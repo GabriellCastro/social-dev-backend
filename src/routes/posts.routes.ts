@@ -15,11 +15,11 @@ postsRouter.get("/list", ensureAuthenticated, (req, res) =>
   ListPostFactory().handle(req, res)
 );
 
-postsRouter.delete("/delete", ensureAuthenticated, (req, res) =>
+postsRouter.delete("/delete/:id", ensureAuthenticated, (req, res) =>
   DeletePostFactory().handle(req, res)
 );
 
-postsRouter.put("/edit", ensureAuthenticated, (req, res) =>
+postsRouter.put("/edit/:id", ensureAuthenticated, (req, res) =>
   EditPostFactory().handle(req, res)
 );
 

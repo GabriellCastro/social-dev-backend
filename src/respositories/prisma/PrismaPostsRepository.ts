@@ -4,7 +4,9 @@ import { IPostsRepository } from "../types/IPostsRepository";
 
 export class PrismaPostsRepository implements IPostsRepository {
   async getAll(): Promise<Post[]> {
-    const posts = await prisma.post.findMany();
+    const posts = await prisma.post.findMany({
+      orderBy: { createdAt: "desc" },
+    });
 
     return posts;
   }
