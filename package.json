@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn --watch src ./src/server.ts",
-    "migrate": "prisma migrate dev"
+    "migrate": "prisma migrate dev",
+    "start": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn --watch src ./src/server.ts"
   },
   "keywords": [],
   "author": "",
