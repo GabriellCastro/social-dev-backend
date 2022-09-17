@@ -21,7 +21,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
   <li>yarn ou npm install</li>
   <li>configure o .env</li>
   <li>sudo docker compose up -d</li>
-  <li>npx prisma generate</li>
   <li>npx prisma migrate dev</li>
   <li>yarn dev ou npm run dev</li>
  </ul>
