@@ -1,7 +1,7 @@
 <h1 align="center">Social Dev - Rede social Tech [BACKEND]</h1>
 <p align="center">Desafio proposto foi desenvolver uma rede social para desenvolvedores, contendo back-end, front-end e banco de dados.</p>
 
-<a href="https://social-dev-app.vercel.app/">Deploy Aqui!</a>
+<a align="center" href="https://social-dev-app.vercel.app/">Deploy Aqui!</a>
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
