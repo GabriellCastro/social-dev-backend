@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn --watch src ./src/server.ts",
     "migrate": "prisma migrate dev",
-    "start": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn --watch src ./src/server.ts"
+    "start": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn --watch src ./src/server.ts",
+    "build": "tsc && prisma migrate deploy"
   },
   "keywords": [],
   "author": "",
